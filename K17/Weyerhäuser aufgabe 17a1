@@ -1,0 +1,35 @@
+class Fahrzeug:
+    def _init_(self, farbe, baujahr):
+        self.farbe = farbe
+        self.baujahr = baujahr
+
+    def fahren(self):
+        print("Das Fahrzeug fährt.")
+
+class Motorrad(Fahrzeug):
+    def _init_(self, farbe, baujahr, marke):
+        super()._init_(farbe, baujahr)
+        self.marke = marke
+
+    def wheelie(self):
+        print("Das Motorrad macht einen Wheelie.")
+
+class Auto(Fahrzeug):
+    def _init_(self, farbe, baujahr, marke):
+        super()._init_(farbe, baujahr)
+        self.marke = marke
+
+    def parken(self):
+        print("Das Auto parkt ein.")
+
+# Objekte erstellen und mit ihnen interagieren
+motorrad = Motorrad("rot", 2020, "Honda")
+auto = Auto("blau", 2015, "Volkswagen")
+
+print(f"Das Motorrad ist ein {motorrad.marke}, Baujahr {motorrad.baujahr}, Farbe {motorrad.farbe}.")
+motorrad.fahren()
+motorrad.wheelie()
+
+print(f"Das Auto ist ein {auto.marke}, Baujahr {auto.baujahr}, Farbe {auto.farbe}.")
+auto.fahren()
+auto.parken()
